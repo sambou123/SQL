@@ -1,0 +1,27 @@
+--Creating a clothing store database
+
+CREATE TABLE store (id integer primary key, clothing text, quantity integer, price integer);
+
+INSERT into store values (1, "Shirts", 4, 15.99);
+INSERT into store values (2, "Shorts", 10, 10.99);
+INSERT into store values (3, "Jeans", 9, 6.99);
+INSERT into store values (4, "Socks", 4, 4.99);
+INSERT into store values (5, "Sandals", 6, 9.99);
+INSERT into store values (6, "Pants", 4, 24.99);
+INSERT into store values (7, "Sneakers", 10, 36.99);
+INSERT into store values (8, "Bra", 9, 24.99);
+INSERT into store values (9, "Panties", 4, 5.99);
+INSERT into store values (10, "Briefs", 6, 5.99);
+INSERT into store values (11, "Necklace", 4, 9.99);
+INSERT into store values (12, "Bracelet", 10, 6.99);
+INSERT into store values (13, "Earrings", 9, 4.99);
+INSERT into store values (14, "Hair bow", 4, 1.99);
+INSERT into store values (15, "Hair Tie", 6, .99);
+
+--display the database in order by prices
+
+SELECT * from store order by price;
+
+--display the items from the database with values greater than 10.99 and then ordered by price
+
+SELECT * from store where price > 10.99 order by price;
