@@ -1,0 +1,61 @@
+--Creating a movie and celebrity database
+
+--What are the movie star names
+
+CREATE TABLE celebrities (
+    id integer primary key autoincrement,
+    name TEXT,
+    age INTEGER);
+    
+INSERT INTO celebrities (name, age) VALUES
+("Tobey Maguire", 38);
+INSERT INTO celebrities (name, age) VALUES
+("Scarlett Johanssen", 36);
+INSERT INTO celebrities (name, age) VALUES
+("Willem DaFoe", 68);
+INSERT INTO celebrities (name, age) VALUES
+("Christopher Walken", 78);
+INSERT INTO celebrities (name, age) VALUES
+("Christina Ricci", 41);
+
+
+--What are some of the movies they have been featured in
+
+CREATE TABLE movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_id INTEGER,
+    name TEXT);
+    
+INSERT INTO movies (movie_id, name) VALUES
+(1, "Spiderman");
+INSERT INTO movies (movie_id, name) VALUES
+(1, "Brothers");
+INSERT INTO movies (movie_id, name) VALUES
+(2, "The Avengers"); 
+INSERT INTO movies (movie_id, name) VALUES
+(2, "Black Widow");
+INSERT INTO movies (movie_id, name) VALUES
+(3, "Spiderman");
+INSERT INTO movies (movie_id, name) VALUES
+(3, "Aquaman");
+INSERT INTO movies (movie_id, name) VALUES
+(4, "Sleepy Hallow");
+INSERT INTO movies (movie_id, name) VALUES
+(4, "Pulp Fiction");
+INSERT INTO movies (movie_id, name) VALUES
+(5, "Sleepy Hallow");
+INSERT INTO movies (movie_id, name) VALUES
+(5, "Casper");
+
+--JOINING the two together
+
+SELECT celebrities.name, movies.name from celebrities
+    JOIN movies
+    ON celebrities.id = movie_id;
+    
+  --Showing one particular query to see what movies Christopher Walken have been in
+    
+SELECT celebrities.name, movies.name from celebrities
+    JOIN movies
+    ON celebrities.id = movie_id
+    WHERE celebrities.name = "Christopher Walken";
